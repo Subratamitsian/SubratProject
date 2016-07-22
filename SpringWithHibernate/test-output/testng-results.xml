@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="691" started-at="2016-07-19T11:42:58Z" finished-at="2016-07-19T11:42:59Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="691" started-at="2016-07-19T11:42:58Z" finished-at="2016-07-19T11:42:59Z">
+      <class name="com.subrat.springmvc.controller.AppControllerTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.subrat.springmvc.controller.AppControllerTest@cb5822]" name="setUp" is-config="true" duration-ms="577" started-at="2016-07-19T17:12:58Z" finished-at="2016-07-19T17:12:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="listEmployees()[pri:0, instance:com.subrat.springmvc.controller.AppControllerTest@cb5822]" name="listEmployees" duration-ms="16" started-at="2016-07-19T17:12:59Z" finished-at="2016-07-19T17:12:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- listEmployees -->
+        <test-method status="PASS" signature="newEmployee()[pri:0, instance:com.subrat.springmvc.controller.AppControllerTest@cb5822]" name="newEmployee" duration-ms="78" started-at="2016-07-19T17:12:59Z" finished-at="2016-07-19T17:12:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newEmployee -->
+      </class> <!-- com.subrat.springmvc.controller.AppControllerTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

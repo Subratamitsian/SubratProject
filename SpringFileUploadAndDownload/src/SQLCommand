@@ -1,0 +1,55 @@
+## Creating APP_USER TABLE
+
+create table APP_USER (
+   id BIGINT NOT NULL AUTO_INCREMENT,
+   sso_id VARCHAR(30) NOT NULL,
+   first_name VARCHAR(30) NOT NULL,
+   last_name  VARCHAR(30) NOT NULL,
+   email VARCHAR(30) NOT NULL,
+   PRIMARY KEY (id),
+   UNIQUE (sso_id)
+);
+  
+
+##Creating  USER_DOCUMENT TABLE 
+
+create table USER_DOCUMENT(
+   id BIGINT NOT NULL AUTO_INCREMENT,
+   user_id BIGINT NOT NULL,
+   name  VARCHAR(100) NOT NULL,
+   description VARCHAR(255) ,
+   type VARCHAR(100) NOT NULL,
+   content longblob NOT NULL,
+   PRIMARY KEY (id),
+   CONSTRAINT document_user FOREIGN KEY (user_id) REFERENCES APP_USER (id) ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+
+
+##################################
+#Hibernate annotations
+
+optional= false/true:- mainly used for lazy loading, so that proxy can be used by hibernate for use.
+					if False:- by default INNER JOIN
+						True :- Left Outer Join
+						
+Using "mappedBy" attribute of mapping annotations(like @OneToOne, @OneToMany, @ManyToMany) for bi-directional relationship. 
+This attribute allows you to refer the associated entities from both sides. If "X" has association with "Y" then you can get X from Y and Y from X.
+
+The name in mappedBy is telling Hibernate where to find the configuration for the JoinColumn.
+
+
+
+
+##########Troubleshooting steps####################
+1)
+1) In Spring MVC development, developer try to set a value into a model, and display the value in JSP via EL, e.g ${msg},
+
+sol:- in jsp add the below tags
+<head>
+<%@ page isELIgnored="false" %>
+</head>
+
+2)If blob file size is bigger and your are getting exception like packet size smaller then execute the below command in mysql prompt
+sol:-
+SET GLOBAL max_allowed_packet = 1024*1024*14;
